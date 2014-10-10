@@ -1,7 +1,6 @@
 public class Tile 
 {
-    private int x;
-    private int y;
+    private Coordinate coordinate;
     private int ss;
     private int r;
     private int l;
@@ -12,8 +11,7 @@ public class Tile
     
     public Tile(int xPos, int yPos, int surface, int right, int left, int up, int down, int dirt, boolean charging)
     {
-        setX(xPos);
-        setY(yPos);
+        coordinate = new Coordinate(xPos, yPos);
         setSurfaceType(surface);
         setRightPath(right);
         setLeftPath(left);
@@ -24,19 +22,19 @@ public class Tile
     }
     
     public int getX() {
-        return x;
+        return coordinate.getXCoordinate();
     }
 
     public void setX(int xPos) {
-        this.x = xPos;
+        coordinate.setXCoordinate(xPos);
     }
 
     public int getY() {
-        return y;
+        return coordinate.getYCoordinate();
     }
 
     public void setY(int yPos) {
-        this.y = yPos;
+        coordinate.setXCoordinate(yPos);
     }
 
     /**
@@ -183,4 +181,16 @@ public class Tile
     public void setChargingStation(boolean isCs) {
         this.cs = isCs;
     }
+	
+     /**
+     * 
+     * This method returns the HashCode from the Coordinate object.
+     * The floor class uses this method to determine what the key should be
+     * for the tiles map in that class.
+     * @return Integer
+     */
+    public Integer getCoordinateHashCode()
+    {
+        return (Integer) this.coordinate.hashCode();
+    }	
 }
