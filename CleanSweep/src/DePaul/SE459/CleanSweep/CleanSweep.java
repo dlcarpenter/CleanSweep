@@ -14,7 +14,7 @@ public class CleanSweep
 
     try
       {
-      FloorPlan testFloorPlan = FloorPlanUtility.loadFloorplan(filePath);
+      FloorPlan testFloorPlan = FloorPlanUtility.loadFloorPlan(filePath);
 
       for (int i = 0; i < testFloorPlan.numberOfFloors(); i++)
         {
