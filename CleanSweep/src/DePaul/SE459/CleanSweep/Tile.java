@@ -65,7 +65,7 @@ public class Tile
      * 2 = obstacle
      * 4 = stairs
      */
-    public int getRightTilePath() {
+    public int getRightPath() {
         return r;
     }
 
