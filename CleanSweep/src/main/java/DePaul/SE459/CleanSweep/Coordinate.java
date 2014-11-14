@@ -1,3 +1,5 @@
+package DePaul.SE459.CleanSweep;
+
 public class Coordinate {
     private int xCoordinate;
     private int yCoordinate;
