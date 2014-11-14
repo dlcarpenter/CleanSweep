@@ -4,43 +4,50 @@
 
 	<groupId>DePaul.SE459</groupId>
 	<artifactId>CleanSweep</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1</version>
     <packaging>jar</packaging>
 
-		 <properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		</properties>
- 		
-  
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-        </configuration>
-      </plugin>
-      			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.5</version>
-				<configuration>
-					<testFailureIgnore>true</testFailureIgnore>
-				</configuration>
-			</plugin>  
-    </plugins>
-  </build>
-  
-  
-  <dependencies>
-	<dependency>
-		<groupId>junit</groupId>
-		<artifactId>junit</artifactId>
-		<version>4.11</version>
-		<scope>test</scope>
-	</dependency>
-	</dependencies>
-</project>
+    <properties>
+      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
+    <build>
+      <plugins>
+        <plugin>
+          <!-- Build an executable JAR -->
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.4</version>		  
+          <configuration>
+            <archive>
+              <manifest>
+                <mainClass>DePaul.SE459.Simulator.Simulator</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
+        </plugin>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>2.5.1</version>
+			<configuration>
+			<source>1.7</source>
+			<target>1.7</target>
+			</configuration>
+		</plugin>		
+      </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+	<maven.compiler.source>1.7</maven.compiler.source>
+	<maven.compiler.target>1.7</maven.compiler.target>
+    </properties>       
+</project>
